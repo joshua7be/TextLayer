@@ -15,6 +15,8 @@ TextLayer is a desktop tool for adding an OCR text layer to image-only scanned P
 - Export OCR text to `.txt`
 - Language UI: English / Japanese / Simplified Chinese
 - OCR language selector: English / Japanese / Simplified Chinese / Traditional Chinese
+- Output type selector: PDF/A (default) or PDF
+- Color conversion strategy: Auto / RGB / Gray
 - Settings persistence (last output directory, last language)
 - Logging to `logs/textlayer.log`
 
@@ -77,8 +79,13 @@ python -m textlayer
   - `output/last_dir`
   - `ocr/tesseract_path`
   - `ocr/language`
+  - `output/type`
+  - `output/color_strategy`
 
 ## FAQ
+
+**OCRmyPDF reports a color conversion error.**
+Use the Output Type selector to switch to PDF, or set Color Strategy to RGB/Gray.
 
 **Why are encrypted or signed PDFs rejected?**
 OCRmyPDF cannot safely modify encrypted or signed PDFs without breaking signatures or failing decryption. The tool refuses to process these files.
@@ -134,6 +141,8 @@ python src/main.py
   - `output/last_dir`
   - `ocr/tesseract_path`
   - `ocr/language`
+  - `output/type`
+  - `output/color_strategy`
 
 ## ヒント
 - OCR 言語が想定と違うときは、上部の OCR Language ドロップダウンで言語を指定してください。
